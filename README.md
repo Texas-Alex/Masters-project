@@ -32,7 +32,7 @@ This is a useful example of how to use `.yaml` files: https://www.redhat.com/en/
 1) Download the `gaia_source` table you wish to search for potential candidates.
 2) Create a `.yaml` file via the above instructions.
 3) Run the `candidate_search.py`script with the `gaia_source` file first followed by the `.yaml` file
-   a) eg. `./candidate_search.py gaia_source.csv parameter_lims.yaml`
+   - a) eg. `./candidate_search.py gaia_source.csv parameter_lims.yaml`
 
 The resulting list of candidates will be written as `potential_cands.csv` 
 
