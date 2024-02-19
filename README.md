@@ -2,7 +2,7 @@
 background summary here oTL
 
 ## `.yaml` INSTRUCTIONS
-A `.yaml` file is similar to a python dictionary and is written inb the format seen below
+A `.yaml` file is similar to a python dictionary and is written in the format seen below:
 ```
 #Comment: parameters
 ---
@@ -29,6 +29,12 @@ For this project, the relevant headers are:
 This is a useful example of how to use `.yaml` files: https://www.redhat.com/en/topics/automation/what-is-yaml
 
 ## CODE INSTRUCTIONS
+1) Download the `gaia_source` table you wish to search for potential candidates.
+2) Create a `.yaml` file via the above instructions.
+3) Run the `candidate_search.py`script with the `gaia_source` file first followed by the `.yaml` file
+   a) eg. `./candidate_search.py gaia_source.csv parameter_lims.yaml`
+
+The resulting list of candidates will be written as `potential_cands.csv` 
 
 ### TODO 
 - make more robust/interactible?
