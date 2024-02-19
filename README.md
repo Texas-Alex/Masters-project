@@ -38,3 +38,4 @@ The resulting list of candidates will be written as `potential_cands.csv`
 
 ### TODO 
 - make more robust/interactible?
+- make sure i have all my code i use here
