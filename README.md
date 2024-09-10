@@ -1,5 +1,5 @@
 ## PROJECT SUMMARY
-background summary here oTL
+This repository contains the the code for `candidate_search.py` which was used in my Master's project as well as instructions for using a `.yaml` file
 
 ## `.yaml` INSTRUCTIONS
 A `.yaml` file is similar to a python dictionary and is written in the format seen below:
@@ -36,6 +36,4 @@ This is a useful example of how to use `.yaml` files: https://www.redhat.com/en/
 
 The resulting list of candidates will be written as `potential_cands.csv` 
 
-### TODO 
-- make more robust/interactible?
-- make sure i have all my code i use here
+
