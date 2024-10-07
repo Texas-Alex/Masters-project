@@ -1,0 +1,21 @@
+#!/bin/bash -l
+#SBATCH --account=mwavcs
+#SBATCH --cluster=garrawarla
+#SBATCH --partition=workq
+#SBATCH --time=24:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=4G
+#SBATCH --job-name=prepfolding
+#SBATCH --output=%x_%j.out
+
+module load singularity
+module list
+
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+CONTAINER=/pawsey/mwa/singularity/psr-search/psr-search.sif
+
+singularity exec ${CONTAINER} prepfold -psrfits -fine -nodmsearch -noscales -nooffsets -noweights -noxwin -ncpus 1 -mask rfi_root_rfifind.mask -dm 127.2 -o "Source_5_fullobs_127" -nsub 2048 -npart 32 -n 64 -accelcand 20 -accelfile Source_5_small_obs1_0.sf_DM127.20_ACCEL_200.cand /scratch/mwavcs/abennett/Source_5/uwl_240411_222833_*.sf
+#singularity exec ${CONTAINER} prepfold -psrfits -fine -noscales -nooffsets -noweights -noxwin -ncpus 1 -mask rfi_root_rfifind.mask -dm 431.1 -o "Source_2_obs2_cand_DM431.1" -nsub 2048 -npart 32 -n 64 -accelcand 20 -accelfile Source_2_0.sf_DM431.10_ACCEL_200.cand /scratch/mwavcs/abennett/Source_2/Source_2_obs2*.sf
+#singularity exec ${CONTAINER} prepfold -psrfits -fine -noscales -nooffsets -noweights -noxwin -ncpus 1 -mask rfi_root_rfifind.mask -dm 431.1 -o "Source_2_obs3_cand_DM431.1" -nsub 2048 -npart 32 -n 64 -accelcand 20 -accelfile Source_2_0.sf_DM431.10_ACCEL_200.cand /scratch/mwavcs/abennett/Source_2/Source_2_obs3*.sf
+#singularity exec ${CONTAINER} prepfold -psrfits -fine -noscales -nooffsets -noweights -noxwin -ncpus 1 -mask rfi_root_rfifind.mask -dm 431.1 -o "Source_2_obs4_cand_DM431.1" -nsub 2048 -npart 32 -n 64 -accelcand 20 -accelfile Source_2_0.sf_DM431.10_ACCEL_200.cand /scratch/mwavcs/abennett/Source_2/Source_2_obs4*.sf
